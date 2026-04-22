@@ -36,20 +36,49 @@
         <div class="desc_cabecalho">
             <p class="cabecalho_descricao">Programador por Diversão</p>
             <div class="links_proficionais">
-                <a href="https://www.linkedin.com/in/arthur-godoy-caminski-933985358/" class="link_social">Linkedin</a>
-                <a href="https://github.com/Sev3n30" class="link_social">Github</a>
+                <a href="https://www.linkedin.com/in/arthur-godoy-caminski-933985358/" class="link_social" target="_blank">Linkedin</a>
+                <a href="https://github.com/Sev3n30" class="link_social" target="_blank">Github</a>
             </div>
         </div>
     </main>
 
+    <div id="dominio">
+        <h1 id="dominio-texto">Muryōkūsho</h1>
+    </div>
+    <div id="fundo-alt"></div>
+    <div id="estrelas-bg"></div>
+
     <section id="sobre" class="sobre">
         <h2 class="sobre_titulo">Sobre mim</h2>
         <div class="sobre_caixa">
-            <p class="sobre_paragrafo">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi est adipisci voluptatem facilis
-                maiores laudantium accusantium neque culpa ratione aperiam velit iste deserunt reprehenderit atque,
-                dicta doloribus asperiores saepe similique?
-            </p>
+            <div class="moldura">
+                <p>
+                    Muito bem-vindo ao meu canto.
+                </p>
+                <p>
+                    Me chamo Arthur Godoy Caminski, mas pode me chamar de Arashii ou Subarashii — tanto faz.
+                    Atualmente estou cursando ADS e desenvolvendo projetos pessoais, explorando tanto backend quanto frontend.
+                </p>
+                <p>
+                    Meu verdadeiro objetivo vai além disso: quero atuar na área de robótica, mecânica e mecatrônica,
+                    integrando software com o mundo físico. Sempre tive interesse nesse tipo de futuro — e quero fazer parte da construção dele.
+                </p>
+                <p>
+                    Gosto de me desafiar constantemente, seja treinando, aprendendo coisas novas ou criando projetos.
+                    Alguns ficam pelo caminho (faz parte), mas os importantes eu levo até o fim.
+                </p>
+                <p>
+                    Também curto bastante animes. Uma das minhas maiores inspirações é o Satoru Gojo,
+                    principalmente pela forma como suas habilidades e personalidade foram construídas.
+                </p>
+                <p>
+                    Inclusive, meu projeto Nyxs futuramente terá conceitos inspirados nisso... mas isso você ainda vai descobrir.
+                </p>
+                <p>
+                    Hoje, acredito que tenho uma base sólida o suficiente para me adaptar rapidamente a qualquer desafio técnico.
+                    E isso é só o começo.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -57,33 +86,99 @@
         <h2 class="projetos_titulo">Meus Projetos</h2>
         <div class="projetos_caixa">
 
-            <div class="projetos_card">
-                <img src="./img/Nyxs_perfil.png" alt="Projeto 1" class="projetos_imagem">
-                <div class="caixa_textos">
-                    <h3 class="info_projetos">Nyxs Bot</h3>
-                    <p class="paragrafo_projetos">Meu projeto pessoal para criar um bot com inteligencia artificial, a
-                        nyxs é muito foda</p>
+            <div class="projetos_card" id="card1">
+                <div class="card_header">
+                    <img src="./img/backend.png" class="projetos_imagem">
+                    <div class="caixa_textos">
+                        <h3>Projetos de Backend</h3>
+                        <p>Projetos de servidor, bots e APIs</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="projeto_item">
+                        <img src="./img/Nyxs_olho.png">
+                        <div>
+                            <h4>Nyxs Bot</h4>
+                            <p class="paragrafo_projetos">
+                                Um futuro projeto no qual eu pretendo criar uma IA própria, estilo alexa, mas com modelo 3d também
+                            </p>
+                            <a href="#">GitHub</a>
+                            <a href="#">ver projeto</a>
+                        </div>
+                    </div>
+
+                    <div class="projeto_item">
+                        <img src="./img/qin_olho.png">
+                        <div>
+                            <h4>Qin Bot</h4>
+                            <p class="paragrafo_projetos">
+                                Meu projeto atual, um bot de discord em JavaScript, em desenvolvimento
+                            </p>
+                            <a href="#">GitHub</a>
+                            <a href="#">ver projeto</a>
+                        </div>
+                    </div>
+
+                    <div class="projeto_item">
+                        <img src="./img/nox_olho.png">
+                        <div>
+                            <h4>Nox Bot</h4>
+                            <p class="paragrafo_projetos">
+                                Meu primeiro projeto de bot, usando somente Python, ainda em desenvolvimento
+                            </p>
+                            <a href="#">GitHub</a>
+                            <a href="#">ver projeto</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="projetos_card">
-                <img src="./img/qin_banner.png" alt="Projeto 1" class="projetos_imagem">
-                <div class="caixa_textos">
-                    <h3 class="info_projetos">Qin bot</h3>
-                    <p class="paragrafo_projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                        architecto
-                        similique fuga officia repudiandae est totam dolor quisquam numquam? Exercitationem debitis sit
-                        porro dolorum quod nisi possimus voluptas ipsa ipsum!</p>
+
+            <div class="projetos_card" id="card2">
+                <div class="card_header">
+                    <img src="./img/frontend.png" class="projetos_imagem">
+                    <div class="caixa_textos">
+                        <h3>Projetos de Frontend</h3>
+                        <p>Projetos de sites e designs</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="projeto_item">
+                        <img src="./img/Nyxs_perfil.png">
+                        <div>
+                            <h4>Nyxs Bot</h4>
+                            <p class="paragrafo_projetos">
+                                Meu projeto pessoal para criar um bot com inteligencia artificial, a nyxs é muito foda
+                            </p>
+                            <a href="#">GitHub</a>
+                            <a href="#">ver projeto</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="projetos_card">
-                <img src="./img/nox_banner.png" alt="Projeto 1" class="projetos_imagem">
-                <div class="caixa_textos">
-                    <h3 class="info_projetos">Nox Bot</h3>
-                    <p class="paragrafo_projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                        velit
-                        soluta provident et aliquid suscipit, rem molestiae quia adipisci, libero sit dolore officiis
-                        minus
-                        expedita ratione, asperiores deleniti natus magnam!</p>
+                <div class="card_header">
+                    <img src="./img/pacman.jpg" class="projetos_imagem">
+                    <div class="caixa_textos">
+                        <h3>Jogos de navegador</h3>
+                        <p>alguns joguinhos para passar o tempo</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="projeto_item">
+                        <img src="./img/Nyxs_perfil.png">
+                        <div>
+                            <h4>Nyxs Bot</h4>
+                            <p class="paragrafo_projetos">
+                                Meu projeto pessoal para criar um bot com inteligencia artificial, a nyxs é muito foda
+                            </p>
+                            <a href="#">GitHub</a>
+                            <a href="#">ver projeto</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,28 +191,13 @@
                 <input placeholder="Nome" class="campo_form" id="nome">
             </div>
             <div class="grupo_form">
-                <textarea class="campo_form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+                <input type="text" class="campo_form" placeholder="Digite sua Mensagem" rows="4" id="mensagem">
             </div>
             <button type="submit" class="botao">Enviar Whatsapp</button>
         </form>
     </section>
 
-    <script>
-        function enviarWhats(event) {
-            event.preventDefault();
-
-            const nome = document.getElementById('nome').value
-            const mensagem = document.getElementById('mensagem').value
-            const telefone = '5549985045188'
-
-            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
-            const msgFormatada = encodeURIComponent(texto)
-
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
-
-            window.open(url, '_blank')
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

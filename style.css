@@ -99,6 +99,113 @@ body{
     transform: scale(1.02);
 }
 
+#dominio{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+
+    opacity: 0;
+    background: radial-gradient(circle at center,
+        rgba(0,0,0,0.9) 20%,
+        rgba(30, 0, 60, 0.95) 60%,
+        rgba(0,0,0,1) 100%
+    );
+
+    transition: opacity 1.2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dominio.ativo{
+    opacity: 1;
+
+    background: linear-gradient(
+        45deg,
+        #fde047 0%,   
+        #7c3aed 50%,   
+        #1e1b4b 100%   
+    );
+}
+
+#dominio-texto{
+    color: #c084fc;
+    font-size: 3rem;
+    text-align: center;
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+
+    text-shadow:
+        0 0 10px #a855f7,
+        0 0 20px #7c3aed,
+        0 0 40px #6d28d9;
+
+        animation: aparecer 2s ease forwards;
+}
+
+#dominio::before{
+    content: "";
+    position: absolute;
+    inset: -50%;
+    z-index: 0;
+
+    background: radial-gradient(circle at center,
+        rgba(0,0,0,0.9) 20%,
+        rgba(30, 0, 60, 0.95) 60%,
+        rgba(0,0,0,1) 100%
+    );
+
+    animation: girar 6s linear infinite;
+
+    filter: blur(120px);
+    opacity: 0.6;
+}
+
+#estrelas-bg{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.estrelas-ativadas #estrelas-bg{
+    opacity: 1;
+}
+
+.estrela{
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+
+    animation: piscar 2s infinite ease-in-out;
+}
+
+#fundo-alt{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        45deg,
+        #fde047 0%,
+        #7c3aed 50%,
+        #1e1b4b 100%
+    );
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+body.fundo-alterado #fundo-alt{
+    opacity: 1;
+}
+
 .desc_cabecalho{
     display: flex;
     flex-direction: column;
@@ -136,24 +243,40 @@ body{
 
 .sobre_titulo{
     font-size: 3rem;
-    color: var(--claro);
+    color: #e0f2fe;
     text-align: center;
     margin-bottom: 20px;
+    cursor: default;
+
+    text-shadow: 0 0 5px rgba(125, 211, 252, 0.4), 0 0 10px rgba(125, 211, 252, 0.2); 
 }
 
 .sobre_caixa{
-    padding: 2rem;
+    padding: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
     border-radius: 16px;
     border: 1px solid var(--vidro);
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 225, 255, 0.07);
+    box-shadow: 0 0 10px rgb(255, 3, 242), inset 0 0 10px rgba(78, 70, 229, 0.584);
 }
 
-.sobre_paragrafo{
+.moldura{
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+
+    color: #e2e8f0;
+
+    background: rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 0 0 10px rgb(12, 162, 255), inset 0 0 10px rgba(78, 70, 229, 0.5);
+    overflow-x: auto;
 }
 
 .projetos{
@@ -163,7 +286,11 @@ body{
 .projetos_titulo{
     text-align: center;
     font-size: 2.5rem;
+    color: #e0f2fe;
     margin-bottom: 50px;
+    cursor: default;
+
+    text-shadow: 0 0 5px rgba(125, 211, 252, 0.4), 0 0 10px rgba(125, 211, 252, 0.2);
 }
 
 .projetos_card:hover{
@@ -177,6 +304,7 @@ body{
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
 }
 
 .projetos_card{
@@ -187,7 +315,27 @@ body{
     overflow: hidden;
     transition: all 0.5 ease;
     cursor: pointer;
-}   
+}  
+
+.card{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.projeto_item{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--vidro);
+}
+
+.projeto_item img{
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
 
 .projetos_imagem{
     height: 200px;
@@ -215,7 +363,11 @@ body{
 .contatos_titulo{
     text-align: center;
     font-size: 2.5rem;
+    color: #e0f2fe;
     margin-bottom: 50px;
+    cursor: default;
+
+    text-shadow: 0 0 5px rgba(125, 211, 252, 0.4), 0 0 10px rgba(125, 211, 252, 0.2);
 }
 
 .formulario_contato{
@@ -254,14 +406,36 @@ body{
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    position: relative;
     font-weight: bold;
     width: 100%;
-    transition: all 0.5 ease;
+
+    transition: all 0.5s ease;
 }
 
-.botao:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+.botao::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.botao:hover::before{
+    opacity: 1;
 }
 
 .particulas{
@@ -270,7 +444,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     opacity: 0.5;
     background: 
     radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
@@ -301,4 +475,38 @@ body{
         0 0 15px #ad22ee,
         0 0 30px #9900ff;
     }
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+@keyframes girar {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes piscar{
+    0%,100%{ opacity: 0.2; }
+    50%{ opacity: 1; }
 }
