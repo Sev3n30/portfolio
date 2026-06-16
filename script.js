@@ -162,7 +162,7 @@ function trocarPerfil(){
     modoArashii = !modoArashii;
 
     if(modoArashii){
-        fotoPerfil.src = "img/Subarashii_aura.png"
+        fotoPerfil.src = "img/Subarashii_newEra.png"
 
         nomePerfil.textContent = "Subarashii"
 
@@ -190,7 +190,7 @@ function trocarPerfil(){
             </p>
         `;
     }else{
-        fotoPerfil.src = "img/teste-1.0.png"
+        fotoPerfil.src = "img/Arthur_newEra.png"
 
         nomePerfil.textContent = "Arthur Godoy Caminski"
 
@@ -318,3 +318,92 @@ function glitchText(element, finalText, duration = 700){
         }
     }, 40);
 }
+
+//loadingBar
+
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen")
+
+    setTimeout(() => {
+        loadingScreen.classList.add("hidden")
+
+        setTimeout(() => {
+            loadingScreen.remove()
+        }, 800)
+    }, 10)
+})
+
+const loadingText = document.getElementById("loading-text")
+
+const mensagens = [
+    "INITIALIZING SYSTEM...",
+    "CONNECTING TO NYXS...",
+    "LOADING PROJECT DATABASE...",
+    "ACCESS GRANTED"
+]
+
+let i = 0
+
+const intervalo = setInterval(() => {
+    loadingText.textContent = mensagens[i]
+
+    i++;
+
+    if(i >= mensagens.length){
+        clearInterval(intervalo)
+    }
+}, 500)
+
+// cursor
+
+const dot = document.querySelector(".cursor-dot")
+const ring = document.querySelector(".cursor-ring")
+
+let mouseX = 0
+let mouseY = 0
+
+document.addEventListener("mousemove", e => {
+    mouseX = e.clientX
+    mouseY = e.clientY
+
+    dot.style.left = mouseX + "px"
+    dot.style.top = mouseY + "px"
+})
+
+let ringX = 0
+let ringY = 0
+
+function animateCursor(){
+    ringX += (mouseX - ringX) * 0.15
+    ringY += (mouseY - ringY) * 0.15
+
+    ring.style.left = ringX + "px"
+    ring.style.top = ringY + "px"
+
+    requestAnimationFrame(animateCursor)
+}
+
+animateCursor()
+
+const clickable = document.querySelectorAll(
+    "a, button, .clickable"
+)
+
+clickable.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+        dot.style.opacity = "0"
+
+        ring.style.width = "50px"
+        ring.style.height = "50px"
+    })
+
+    item.addEventListener("mouseleave", () =>{
+        dot.style.opacity = "1"
+
+        ring.style.width = "32px"
+        ring.style.height = "32px"
+    })
+})
+
+console.log(dot)
+console.log(ring)

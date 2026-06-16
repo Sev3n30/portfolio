@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/Nyxs_olho.png">
+    <link rel="icon" href="./img/Logo_teste.png">
     <link rel="stylesheet" href="style.css">
-    <title>arashii | portfólio</title>
+    <title>Subarashii | portfólio</title>
 </head>
 
 <body>
     <div class="particulas"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div> 
 
     <nav class="navegacao">
         <ul class="menu">
@@ -29,11 +31,28 @@
         </ul>
     </nav>
 
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>NYXS CORPORATION</h1>
+
+            <p id="loading-text">
+                INITIALIZING SYSTEM...
+            </p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+
+            <div class="external-circle"></div>
+            <div class="internal-circle"></div>
+        </div>
+    </div>
+
     <main id="inicio" class="cabecalho">
         <div class="fotos">
-            <img src="./img/teste-1.0.png" class="foto_perfil" id="fotoPerfil">
+            <img src="./img/Arthur_newEra.png" class="foto_perfil" id="fotoPerfil">
         </div>
-        <h1 class="titulo" id="nomePerfil">Arthur Godoy Caminski</h1>
+        <h1 class="titulo clickable" id="nomePerfil">Arthur Godoy Caminski</h1>
         <div class="desc_cabecalho">
             <p class="cabecalho_descricao" id="descricaoPerfil">Desenvolvedor Full Stack</p>
             <div class="links_proficionais">
@@ -68,21 +87,21 @@
     <div class="background-branding">
         <div class="branding-wrapper linha1">
             <div class="branding-line">
-                <span>SUBARASHII</span>
-                <span>SUBARASHII</span>
-                <span>SUBARASHII</span>
-                <span>SUBARASHII</span>
-                <span>SUBARASHII</span>
+                <span>SUBARASHII PROTOCOL</span>
+                <span>SUBARASHII PROTOCOL</span>
+                <span>SUBARASHII PROTOCOL</span>
+                <span>SUBARASHII PROTOCOL</span>
+                <span>SUBARASHII PROTOCOL</span>
             </div>
         </div>
 
         <div class="branding-wrapper linha2">
             <div class="branding-line">
-                <span>NYXS CORPORATION</span>
-                <span>NYXS CORPORATION</span>
-                <span>NYXS CORPORATION</span>
-                <span>NYXS CORPORATION</span>
-                <span>NYXS CORPORATION</span>
+                <span>NYNX AI SYSTEM</span>
+                <span>NYNX AI SYSTEM</span>
+                <span>NYNX AI SYSTEM</span>
+                <span>NYNX AI SYSTEM</span>
+                <span>NYNX AI SYSTEM</span>
             </div>
         </div>
 
@@ -108,11 +127,11 @@
 
         <div class="branding-wrapper linha5">
             <div class="branding-line">
-                <span>ROBOTICS DIVISION</span>
-                <span>ROBOTICS DIVISION</span>
-                <span>ROBOTICS DIVISION</span>
-                <span>ROBOTICS DIVISION</span>
-                <span>ROBOTICS DIVISION</span>
+                <span>PROJECT DATABASE</span>
+                <span>PROJECT DATABASE</span>
+                <span>PROJECT DATABASE</span>
+                <span>PROJECT DATABASE</span>
+                <span>PROJECT DATABASE</span>
             </div>
         </div>
     </div>
@@ -145,12 +164,12 @@
     </section>
 
     <section id="projetos" class="projetos">
-        <h2 class="projetos_titulo">Meus Projetos</h2>
+        <h2 class="projetos_titulo clickable">Meus Projetos</h2>
         <div class="carousel">
 
-            <div class="projetos_card right" id="card1">
-                <div class="card_header">
-                    <img src="./img/backend.png" class="projetos_imagem">
+            <div class="projetos_card right clickable" id="card1">
+                <div class="card_header clickable">
+                    <img src="./img/backend.png" class="projetos_imagem" alt="Backend">
                     <div class="caixa_textos">
                         <h3>Projetos de Backend</h3>
                         <p>Projetos de servidor, bots e APIs</p>
@@ -158,152 +177,285 @@
                 </div>
 
                 <div class="bubbles_container">
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/sunshine/sunshine_eyes-zoom.png" class="bubble_btn">
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/cards/S1-teste.png" class="bubble_btn" alt="Sunshine">
                             <h4 class="bubble_btn">Sunshine</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Sunshine Bot</h1>
-                            <p>Meu projeto atual de bot para Discord, focado em automações, RPG, mensagens motivacionais e interação.</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/sunshine/sunshine_pixelArt.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>PROJECT // SUNSHINE BOT</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/sunshine/sunshine_pixelArt.png" alt="Sunshine Bot">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>DISCORD BOT</span>
+                                    <span>STATUS</span><span>ACTIVE</span>
+                                    <span>VERSION</span><span>V2.0</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Meu projeto atual de bot para Discord, focado em automações, RPG, mensagens motivacionais,
+                                sistemas próprios e interação com usuários.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Bot Page</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/Nyxs_olho.png" class="bubble_btn">
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/Nyxs_olho.png" class="bubble_btn" alt="Nynx Bot">
                             <h4 class="bubble_btn">Nynx Bot</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Nynx Bot</h1>
-                            <p>Um projeto futuro ainda não iniciado, focado na criação de um Bot com IA própria.</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/Nyxs_perfil.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Nynx Bot</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/Nyxs_perfil.png" alt="Nynx Bot">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>AI BOT</span>
+                                    <span>STATUS</span><span>PLANNED</span>
+                                    <span>VERSION</span><span>—</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Um projeto futuro ainda não iniciado, focado na criação de um Bot com IA própria.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Bot Page</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/nox_olho.png" class="bubble_btn">
-                            <h4 class="bubble_btn">Nox bot</h4>
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/nox_olho.png" class="bubble_btn" alt="Nox Bot">
+                            <h4 class="bubble_btn">Nox Bot</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Nox Bot</h1>
-                            <p>Projeto simples de bot de discord feito totalmente em Python</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/nox_banner.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Nox Bot</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/nox_banner.png" alt="Nox Bot">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>DISCORD BOT</span>
+                                    <span>STATUS</span><span>FINISHED</span>
+                                    <span>VERSION</span><span>V1.0</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Projeto simples de bot de Discord feito totalmente em Python.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Bot Page</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="projetos_card active" id="card2">
-                <div class="card_header">
-                    <img src="./img/frontend.png" class="projetos_imagem">
+
+            <div class="projetos_card active clickable" id="card2">
+                <div class="card_header clickable">
+                    <img src="./img/frontend.png" class="projetos_imagem" alt="Frontend">
                     <div class="caixa_textos">
                         <h3>Projetos de Frontend</h3>
                         <p>Projetos de sites e designs</p>
                     </div>
                 </div>
-
                 <div class="bubbles_container">
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/alert.png" class="bubble_btn">
-                            <h4 class="bubble_btn">Site de Coisas ae</h4>
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/alert.png" class="bubble_btn" alt="Site 1">
+                            <h4 class="bubble_btn">Site de Coisas</h4>
                         </div>
                         <div class="overlay">
-                            <h1>site 1</h1>
-                            <p>Ainda vai ter uma descrição aqui!</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/alert.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Site 1</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/alert.png" alt="Site 1">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>ALERT</span>
+                                    <span>STATUS</span><span>ALERT</span>
+                                    <span>VERSION</span><span>ALERT</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Ainda vai ter uma descrição aqui!</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Test Page</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/alert.png" class="bubble_btn">
-                            <h4 class="bubble_btn">Site de Coisas ae</h4>
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/alert.png" class="bubble_btn" alt="Site 2">
+                            <h4 class="bubble_btn">Site de Coisas</h4>
                         </div>
                         <div class="overlay">
-                            <h1>site 2</h1>
-                            <p>Ainda vai ter uma descrição aqui!</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/alert.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Site 2</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/alert.png" alt="Site 2">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>ALERT</span>
+                                    <span>STATUS</span><span>ALERT</span>
+                                    <span>VERSION</span><span>ALERT</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Ainda vai ter uma descrição aqui!</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Test Page</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/alert.png" class="bubble_btn">
-                            <h4 class="bubble_btn">Site de Coisas ae</h4>
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/alert.png" class="bubble_btn" alt="Site 3">
+                            <h4 class="bubble_btn">Site de Coisas</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Site 3</h1>
-                            <p>Ainda vai ter uma descrição aqui!</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/alert.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Site 3</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image">
+                                    <img src="./img/alert.png" alt="Site 3">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>ALERT</span>
+                                    <span>STATUS</span><span>ALERT</span>
+                                    <span>VERSION</span><span>ALERT</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Ainda vai ter uma descrição aqui!</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="#" target="_blank">Test Page</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            
-            <div class="projetos_card left" id="card3">
-                <div class="card_header">
-                    <img src="./img/pacman.jpg" class="projetos_imagem">
+            <div class="projetos_card left clickable" id="card3">
+                <div class="card_header clickable">
+                    <img src="./img/pacman.jpg" class="projetos_imagem" alt="Jogos">
                     <div class="caixa_textos">
                         <h3>Jogos de navegador</h3>
                         <p>alguns joguinhos para passar o tempo</p>
                     </div>
                 </div>
-
                 <div class="bubbles_container">
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/Pokebola.png" class="bubble_btn">
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/cards/pokebola.png" class="bubble_btn" alt="Pokedex">
                             <h4 class="bubble_btn">Pokedex</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Pokedex</h1>
-                            <p>Pokedex simples usando API</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/alert.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Pokedex</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image-png">
+                                    <img src="./img/cards/pokedex.webp" alt="Pokedex">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>GAME / API</span>
+                                    <span>STATUS</span><span>V1.0</span>
+                                    <span>MECHANIC</span><span>SEARCH</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Pokedex simples usando API</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="https://arashii-pokedex.netlify.app/" target="_blank">JOGAR</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/Falcon.png" class="bubble_btn">
-                            <h4 class="bubble_btn">Space-invaders</h4>
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/cards/alien-2.png" class="bubble_btn" alt="Space Invaders">
+                            <h4 class="bubble_btn">Space-Invaders</h4>
                         </div>
                         <div class="overlay">
-                            <h1>Space-Invaders</h1>
-                            <p>Projeto de jogo do Space-Invaders clássico, atualmente em desenvolvimento.</p>
-                            <a href="https://subarashii-invaders.netlify.app/" target="_blank">GitHub</a>
-                            <img src="./img/Falcon.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Space Invaders</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image-png">
+                                    <img src="./img/Falcon.png" alt="Space Invaders">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>GAME</span>
+                                    <span>STATUS</span><span>V0.8</span>
+                                    <span>MECHANIC</span><span>SHOOT</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Projeto de jogo do Space-Invaders clássico, atualmente em desenvolvimento.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="https://subarashii-invaders.netlify.app/" target="_blank">JOGAR</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bubble_item">
-                        <div class="bubble">
-                            <img src="./img/snake_logo.png" class="bubble_btn">
+                    <div class="bubble_item clickable">
+                        <div class="bubble clickable">
+                            <img src="./img/cards/snake-2.png" class="bubble_btn" alt="Snake">
                             <h4 class="bubble_btn">Snake</h4>
                         </div>
                         <div class="overlay">
-                            <h1>jogo Snake</h1>
-                            <p>Projeto simples baseado no classico jogo da cobrinha, vambora!.</p>
-                            <a href="https://github.com/Sev3n30/Sunshine_Discord-BotV2" target="_blank">GitHub</a>
-                            <img src="./img/alert.png" class="imagem_grande">
+                            <div class="project-header">
+                                <h1>Snake</h1>
+                            </div>
+                            <div class="project-top">
+                                <div class="project-image-png">
+                                    <img src="./img/snake_logo.png" alt="Snake">
+                                </div>
+                                <div class="project-meta">
+                                    <span>TYPE</span><span>GAME</span>
+                                    <span>VERSION</span><span>V1.0</span>
+                                    <span>MECHANIC</span><span>GROW</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Projeto simples baseado no clássico jogo da cobrinha.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">GitHub</a>
+                                <a href="https://snake-arashii-beta.netlify.app/" target="_blank">JOGAR</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
+    <div class="carousel-mobile">
+        <button id="prevBtn">◀</button>
+        <button id="nextBtn">▶</button>
+    </div>
 
     <section id="contato" class="contatos">
         <h2 class="contatos_titulo">Entre em Contato</h2>
