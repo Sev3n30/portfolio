@@ -330,7 +330,7 @@ window.addEventListener("load", () => {
         setTimeout(() => {
             loadingScreen.remove()
         }, 800)
-    }, 10)
+    }, 2200)
 })
 
 const loadingText = document.getElementById("loading-text")
