@@ -35,6 +35,75 @@ body{
     cursor: none;
 }
 
+.afk-message{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-family: "Rubik Glitch", system-ui;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    transform: translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    z-index: 99999;
+
+    pointer-events: none;
+
+    animation: afkFade 5s forwards;
+}
+
+@keyframes afkFade{
+
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    15%{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    85%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+#afk-overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.6);
+
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9990;
+
+    transition:
+        opacity 1s ease,
+        backdrop-filter 1s ease;
+}
+
+#afk-overlay.active{
+    opacity: 1;
+}
+
 #loading-screen{
     position: fixed;
     inset: 0;
@@ -62,18 +131,20 @@ body{
 .loading-content h1{
     font-size: 2rem;
     letter-spacing: 8px;
+    font-family: "Black Ops One", system-ui;
 
     color: #7dd3fc;
 }
 
 #loading-text{
     margin: 20px;
+    font-family: "Rubik Glitch", system-ui;
 
     color: #94a3b8;
 }
 
 .loading-bar{
-    width: 440px; 
+    width: 455px; 
     height: 6px;
     background: rgba(255,255,255,.1);
 
@@ -140,17 +211,24 @@ body{
 .cursor-ring{
     position: fixed;
 
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 
-    border: 2px solid #00d4ff;
+    border: 2px solid #ff00ff;
     border-radius: 50%;
 
     pointer-events: none;
     z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.35s cubic-bezier(.175,.885,.32,1.275),
+        box-shadow 0.3s ease;
+}
 
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.cursor-ring.hover{
+    transform: translate(-50%, -50%) scale(1.8);
+
+    box-shadow: 0 0 2px #00d4ff, 0 0 5px #ff00ff;
 }
 
 .navegacao{
@@ -211,6 +289,7 @@ body{
 
 .titulo{
     font-size: 3.5rem;
+    font-family: "Croissant One", serif;
     color: var(--primaria);
     font-weight: bold;
     margin: 20px;
@@ -358,21 +437,25 @@ body.fundo-alterado #fundo-alt{
 
 .ticker-track{
     display: flex;
-    gap: 80px;
     width: max-content;
 
-    animation: scroll 60s linear infinite;
+    animation: scroll 140s linear infinite;
+} 
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    } 
+    to{
+        transform: translateX(calc(-60%))
+    }
 }
 
 .ticker span{
-    display: inline-block;
     white-space: nowrap;
-    animation: scroll 40s linear infinite;
 }
 
 @media (max-width:1300px){
-
-
     .ticker-top{
         left:-250px;
     }
@@ -418,26 +501,27 @@ body.fundo-alterado #fundo-alt{
 
 .background-branding span{
     position: relative;
+    font-family: "Black Ops One", system-ui;
 
     font-size: 20rem;
-    font-weight: 900;
+    font-weight: 1000;
 
     color: rgb(255, 255, 255);
-    opacity: 0.02;
+    opacity: 0.015;
 
     white-space: nowrap;
     flex-shrink: 0;
 }
 
-.linha1{top: -52vh;}
-.linha1 span{font-size: clamp(8rem, 14vw, 16rem);}
-.linha2{top: -22vh;}
-.linha2 span{font-size: clamp(10rem, 18vw, 22rem);}
-.linha3{top: 23vh;}
+.linha1{top: -50vh;}
+.linha1 span{font-size: clamp(8rem, 15vw, 16rem);}
+.linha2{top: -19vh;}
+.linha2 span{font-size: clamp(10rem, 18vw, 23rem);}
+.linha3{top: 24vh;}
 .linha3 span{font-size: clamp(9rem, 15vw, 18rem);}
-.linha4{top: 57vh;}
-.linha4 span{font-size: clamp(12rem, 20vw, 24rem);}
-.linha5{top: 107vh;}
+.linha4{top: 59vh;}
+.linha4 span{font-size: clamp(12rem, 20vw, 25rem);}
+.linha5{top: 108vh;}
 .linha5 span{font-size: clamp(10rem, 16vw, 20rem);}
 
 .desc_cabecalho{
@@ -1024,15 +1108,6 @@ body.fundo-alterado #fundo-alt{
 @keyframes piscar{
     0%,100%{ opacity: 0.2; }
     50%{ opacity: 1; }
-}
-
-@keyframes scroll {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(calc(-50%))
-    }
 }
 
 @keyframes expandirBubble {

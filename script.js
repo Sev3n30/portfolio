@@ -138,6 +138,8 @@ const fotoPerfil = document.getElementById("fotoPerfil");
 const nomePerfil = document.getElementById("nomePerfil");
 const descricaoPerfil = document.getElementById("descricaoPerfil");
 const textoSobre = document.getElementById("textoSobre");
+const tickerTop = document.getElementById('tickerTop');
+const tickerBottom = document.getElementById('tickerBottom');
 let modoArashii = false
 
 
@@ -164,10 +166,6 @@ function trocarPerfil(){
     if(modoArashii){
         fotoPerfil.src = "img/Subarashii_newEra.png"
 
-        nomePerfil.textContent = "Subarashii"
-
-        descricaoPerfil.textContent = "Programador por Diversão"
-
         textoSobre.innerHTML = `
             <p>
                 Desenvolvedor profissional de ideias questionáveis, sistemas improváveis e projetos que definitivamente começaram como uma brincadeira.
@@ -191,10 +189,6 @@ function trocarPerfil(){
         `;
     }else{
         fotoPerfil.src = "img/Arthur_newEra.png"
-
-        nomePerfil.textContent = "Arthur Godoy Caminski"
-
-        descricaoPerfil.textContent = "Desenvolvedor Full Stack"
 
         textoSobre.innerHTML = `
             <p>
@@ -227,7 +221,7 @@ function ativarDominio(){
         trocarPerfil();
 
         glitchText(nomePerfil, modoArashii
-            ?"subarashii"
+            ?"Subarashii"
             :"Arthur Godoy Caminski"
         );
 
@@ -235,6 +229,18 @@ function ativarDominio(){
             ?"Programador por Diversão"
             :"Desenvolvedor Full Stack"
         )
+
+        glitchText(tickerTop, modoArashii
+            ?"◆ C'MON, DON'T BE NERVOUS ◆ NAH, I'D WIN ◆ NYXS CORPORATION ESTÁ OBSERVANDO ◆ 27 PROJETOS INICIADOS ◆ 2 FINALIZADOS ◆ PROPORÇÃO PERFEITAMENTE ACEITÁVEL ◆ O BUG NÃO É UM BUG • É UMA FEATURE ◆ REALIDADE OPCIONAL ◆ SUNSHINE ESTÁ VIVO? ◆ TALVEZ ◆ GOJO APROVARIA ESTE CÓDIGO ◆ DESAFIE O SPACE INVADERS ◆ O FLAPPY PROJECT SOBREVIVEU MAIS UMA SEMANA ◆ C'MON, DON'T BE NERVOUS ◆ NAH, I'D WIN ◆"
+            :"◆ PROTOCOLO ARTHUR ONLINE ◆ SPACE INVADERS DISPONÍVEL PARA DESAFIANTES ◆ FLAPPY PROJECT EM DESENVOLVIMENTO ATIVO ◆ PROJETOS FRONTEND INTERATIVOS ◆ SISTEMAS EXPERIMENTAIS EM TESTE ◆ ACESSE O GITHUB PARA MAIS DETALHES ◆ ADS • ANÁLISE E DESENVOLVIMENTO DE SISTEMAS ◆ EXPLORANDO BACKEND E FRONTEND ◆ CADA PROJETO É UMA NOVA EXPERIMENTAÇÃO ◆ DESENVOLVIMENTO DE APLICAÇÕES WEB MODERNAS ◆ SUNSHINE E NYNX CONTINUAM EVOLUINDO ◆ PROTOCOLO ARTHUR ONLINE ◆ SPACE INVADERS DISPONÍVEL PARA DESAFIANTES ◆ FLAPPY PROJECT EM DESENVOLVIMENTO ATIVO ◆ PROJETOS FRONTEND INTERATIVOS ◆ SISTEMAS EXPERIMENTAIS EM TESTE ◆"
+        )
+
+        glitchText(tickerBottom, modoArashii
+            ?"◆ SISTEMA OPERANDO ALÉM DOS LIMITES RECOMENDADOS ◆ NÍVEL DE CAFÉ: CRÍTICO ◆ CHANCES DE CRIAR MAIS UM PROJETO: 98.7% ◆ NYNX CORPORATION RECRUTANDO SONHADORES ◆ SUNSHINE CORE CARREGANDO ◆ ERROS FORAM IGNORADOS COM SUCESSO ◆ O FRONTEND SOBREVIVEU ◆ O BACKEND TAMBÉM ◆ O BANCO DE DADOS AINDA RESPIRA ◆ A REALIDADE É APENAS UMA SUGESTÃO ◆ SISTEMA OPERANDO ALÉM DOS LIMITES RECOMENDADOS ◆ NÍVEL DE CAFÉ: CRÍTICO ◆"
+            :"◆ SUNSHINE PROJECT • STATUS OPERACIONAL 46% ◆ NYNX ENTITY • DESENVOLVIMENTO CONTÍNUO ◆ HTML • CSS • JAVASCRIPT ◆ NODE.JS • MYSQL • APIs ◆ FULL STACK EM TREINAMENTO CONSTANTE ◆ AUTOMAÇÃO DE PROCESSOS E SISTEMAS ◆ DESENVOLVIMENTO DE BOTS PARA DISCORD ◆ ROBÓTICA E MECATRÔNICA COMO OBJETIVO PRINCIPAL ◆ APRENDIZADO CONTÍNUO ATIVADO ◆ NOVAS FUNCIONALIDADES EM PESQUISA ◆ TECNOLOGIA • CRIATIVIDADE • EXPERIMENTAÇÃO ◆ SUNSHINE PROJECT • STATUS OPERACIONAL 46% ◆ NYNX ENTITY • DESENVOLVIMENTO CONTÍNUO ◆ HTML • CSS • JAVASCRIPT ◆ NODE.JS • MYSQL • APIs ◆"
+        )
+
+        glitchText()
 
         document.body.classList.toggle('estrelas-ativadas');
         document.body.classList.toggle('fundo-alterado');
@@ -316,7 +322,7 @@ function glitchText(element, finalText, duration = 700){
             clearInterval(interval)
             element.textContent = finalText
         }
-    }, 40);
+    }, 60);
 }
 
 //loadingBar
@@ -393,17 +399,108 @@ clickable.forEach(item => {
     item.addEventListener("mouseenter", () => {
         dot.style.opacity = "0"
 
-        ring.style.width = "50px"
-        ring.style.height = "50px"
+        ring.classList.add('hover')
     })
 
     item.addEventListener("mouseleave", () =>{
         dot.style.opacity = "1"
 
-        ring.style.width = "32px"
-        ring.style.height = "32px"
+        ring.classList.remove('hover')
     })
 })
 
 console.log(dot)
 console.log(ring)
+
+
+//inative
+
+let idleTime = 0
+
+setInterval(() => {
+    idleTime++;
+},1000)
+
+document.addEventListener("mousemove", resetIdle)
+document.addEventListener("keydown", resetIdle)
+document.addEventListener("click", resetIdle)
+document.getElementById("afk-overlay")
+
+function resetIdle(){
+    idleTime = 0
+
+    document
+        .getElementById("afk-overlay")
+        .classList.remove("active");
+
+    document
+        .querySelectorAll(".afk-message")
+        .forEach(el => el.remove());
+}
+
+setInterval(() => {
+    if(idleTime === 30){
+        ativarAFK();
+        mostrarMensagemAFK("ARE YOU STILL THERE?");
+    }
+
+    if(idleTime === 45){
+        mostrarMensagemAFK("I CAN SEE YOU.");
+    }
+
+    if(idleTime === 60){
+        mostrarMensagemAFK("DON'T BE NERVOUS.");
+    }
+
+    if(idleTime === 90){
+        mostrarMensagemAFK(":)");
+    }
+
+    if(idleTime === 180){
+        mostrarMensagemAFK("OKAY, THIS IS BORING");
+    }
+}, 1000)
+
+function mostrarMensagemAFK(texto){
+    const mensagem = document.createElement('div');
+
+    mensagem.classList.add('afk-message')
+
+    let i = 0;
+
+        const glitch = setInterval(() => {
+
+            mensagem.textContent =
+                texto
+                    .split("")
+                    .map(char =>
+                        Math.random() > 0.8
+                            ? "!@#$%&*?".charAt(
+                                Math.floor(Math.random()*8)
+                            )
+                            : char
+                    )
+                    .join("");
+
+            i++;
+
+            if(i > 20){
+                clearInterval(glitch);
+                mensagem.textContent = texto;
+            }
+
+        },50);
+
+    document.body.appendChild(mensagem)
+
+    setTimeout(() => {
+        mensagem.remove()
+    }, 5000)
+}
+
+function ativarAFK(){
+
+    document
+        .getElementById("afk-overlay")
+        .classList.add("active");
+}
